@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Faster+One&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css" type="text/css">
+    <title>Meme Generator</title>
+</head>
+<body>
+    <section id="header-container">
+        <img src="https://media4.giphy.com/media/v1.Y2lkPTc5MGI3NjExbDYzbjJkMGZpdDY4OHU5Y3Bqc2M3cWJxYW8zcmYzbWRiNXdsdGpmbyZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/l4FGpPki5v2Bcd6Ss/giphy.gif" alt="DJ Khaled dancing meme">
+        <h1 id="header">Dank Meme Generator</h1>
+        <p id="subheader">Create your Own Memez</p>
+    </section>
+    <form id="meme-form">
+        <div>
+            <label for="url">Input URL</label>
+            <input type="text" name="url" id="url" required placeholder="Enter URL...">
+        </div>
+        <div>
+            <label for="top-text">Top Text</label>
+            <input type="text" name="top-text" id="top-text" required placeholder="Enter Text...">
+        </div>
+        <div>
+            <label for="bottom-text">Bottom Text</label>
+            <input type="text" name="bottom-text" id="bottom-text" required placeholder="Enter Text...">
+        </div>
+        <button type="submit">Create Meme</button>
+    </form>
+    <div id="meme-container">
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>

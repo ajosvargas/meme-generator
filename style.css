@@ -1,0 +1,126 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  body {
+    background: radial-gradient(
+      circle,
+      rgba(238, 174, 202, 1) 0%,
+      rgba(148, 187, 233, 1) 100%
+    );
+  }
+  
+  #header-container,
+  #meme-form {
+    margin: 0 auto;
+    width: 50%;
+    text-align: center;
+  }
+  
+  #meme-form,
+  #meme-container {
+    margin-top: 3rem;
+  }
+  
+  #meme-form {
+      display: flex;
+      flex-wrap: wrap;
+  }
+  
+  #header-container img {
+    width: 200px;
+    height: 200px;
+  }
+  
+  #header,
+  #subheader {
+    font-family: "Faster One", system-ui;
+    font-weight: 400;
+  }
+  
+  #header {
+    font-size: 3rem;
+  }
+  
+  #subheader {
+    font-size: 1rem;
+  }
+  
+  #meme-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  
+  .image-container {
+    width: 30%;
+    padding-top: 30%;
+    background-size: cover;
+    position: relative;
+    margin: 10px;
+  }
+  
+  .top-text,
+  .bottom-text {
+    font-family: impact;
+    font-size: 2.5em;
+    text-transform: uppercase;
+    color: white;
+    letter-spacing: 1px;
+    text-shadow: 2px 2px 0 #000, -2px -2px 0 #000, 2px -2px 0 #000,
+      -2px 2px 0 #000, 0px 2px 0 #000, 2px 0px 0 #000, 0px -2px 0 #000,
+      -2px 0px 0 #000, 2px 2px 5px #000;
+  }
+  
+  .top-text {
+    position: absolute;
+    top: 10px;
+    text-align: center;
+    width: 100%;
+  }
+  
+  .bottom-text {
+    position: absolute;
+    text-align: center;
+    width: 100%;
+    bottom: 10px;
+  }
+  
+  .overlay {
+    transition: 0.5s ease;
+    opacity: 0;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+  }
+  
+  .text {
+    background-color: #17161c;
+    color: white;
+    font-size: 16px;
+    padding: 16px 32px;
+    z-index: 1;
+  }
+  
+  .image-container:hover .overlay {
+    opacity: 1;
+    cursor: pointer;
+  }
+  
+  @media screen and (max-width:900px){
+      .image-container {
+          width: 45%;
+          padding-top: 40%;
+      }
+  }
+  
+  @media screen and (max-width:600px){
+      .image-container {
+          width: 60%;
+          padding-top: 50%;
+      }
+  }
