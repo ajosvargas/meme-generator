@@ -1,37 +1,42 @@
-const form = document.getElementById('meme-form');
-const memeContainer = document.getElementById('meme-container');
+const form = document.getElementById("meme-form");
+const memeContainer = document.getElementById("meme-container");
 
-memeContainer.addEventListener('click', (e) => {
-    if(e.target.innerText === "Delete Image"){
+function buttonListener(el){
+    el.addEventListener('click',(e) =>{
         e.target.parentElement.parentElement.remove();
-    }
-})
+    });
+};
 
-form.addEventListener('submit', (e) => {
-    e.preventDefault();
-    const values = [document.querySelector('#url').value, document.querySelector('#top-text').value,document.querySelector('#bottom-text').value];
-    let meme = createMeme(values);
-    memeContainer.append(meme);
-    document.querySelector('#url').value = "";
-    document.querySelector('#top-text').value = "";
-    document.querySelector('#bottom-text').value = "";
-})
+form.addEventListener("submit", (e) => {
+  e.preventDefault();
+  const values = {
+    url: document.querySelector("#url"),
+    topText: document.querySelector("#top-text"),
+    bottomText: document.querySelector("#bottom-text")
+  };
+  let meme = createMeme(values);
+  memeContainer.append(meme);
+  values["url"].value = "";
+  values["topText"].value = "";
+  values["bottomText"].value = "";
+});
 
-function createMeme(arr) {
+function createMeme(obj) {
     let img = document.createElement('div');
     img.classList.add("image-container");
-    img.style.backgroundImage = `url("${arr[0]}")`;
+    img.style.backgroundImage = `url("${obj['url'].value}")`;
     let topText = document.createElement('p');
     topText.classList.add("top-text");
-    topText.innerText = arr[1];
+    topText.innerText = obj['topText'].value;
     img.append(topText);
     let BottomText = document.createElement('p');
-    BottomText.innerText = arr[2]
+    BottomText.innerText = obj['bottomText'].value;
     BottomText.classList.add("bottom-text");
     img.append(BottomText);
     let overlay = document.createElement('div');
     overlay.classList.add('overlay');
     let button = document.createElement('p');
+    buttonListener(button);
     button.classList.add('text');
     button.innerText = "Delete Image";
     overlay.append(button);
